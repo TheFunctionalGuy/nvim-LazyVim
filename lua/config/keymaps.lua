@@ -11,6 +11,9 @@ vim.keymap.set("n", "<leader>L", "<cmd>:Lazy<cr>", { desc = "Lazy" })
 vim.keymap.set("c", "<C-j>", "<C-n>")
 vim.keymap.set("c", "<C-k>", "<C-p>")
 
+-- Better undo
+vim.keymap.set("n", "U", "<C-r>")
+
 -- Append semi-colon at end of line in insert mode
 vim.keymap.set("i", "<C-l>", "<C-o>mz<C-o>A;<C-o>`z")
 
