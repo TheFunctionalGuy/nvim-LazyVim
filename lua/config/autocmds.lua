@@ -6,7 +6,7 @@ local function augroup(name)
 end
 
 -- Disable autoformat for cpp files
-vim.api.nvim_create_autocmd({ "FileType" }, {
+vim.api.nvim_create_autocmd("FileType", {
   group = augroup("disable_autoformat"),
   pattern = { "cpp" },
   callback = function()
@@ -23,5 +23,21 @@ vim.api.nvim_create_autocmd("FileType", {
   callback = function(event)
     vim.bo[event.buf].buflisted = false
     vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = event.buf, silent = true })
+  end,
+})
+
+-- Set CWD if first parameter is directory
+vim.api.nvim_create_autocmd("VimEnter", {
+  group = augroup("change_cwd"),
+  callback = function()
+    if vim.fn.argc() == 1 then
+      local stat = vim.loop.fs_stat(vim.fn.argv(0))
+      if stat and stat.type == "directory" then
+        vim.cmd({
+          cmd = "cd",
+          args = { vim.fn.argv(0) },
+        })
+      end
+    end
   end,
 })
