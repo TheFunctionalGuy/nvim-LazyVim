@@ -1,6 +1,7 @@
 return {
   "hrsh7th/nvim-cmp",
   dependencies = { "onsails/lspkind.nvim" },
+  -- Extend existing config
   opts = function(_, opts)
     local cmp = require("cmp")
     local lspkind = require("lspkind")
