@@ -11,6 +11,7 @@ return {
       "git_rebase",
       "gitattributes",
       "gitcommit",
+      "jsonc",
       "rust",
     })
   end,
