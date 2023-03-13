@@ -29,9 +29,9 @@ vim.keymap.set("n", "N", "Nzzzv", { desc = "Prev search result" })
 vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste (preserve register)" })
 
 -- next greatest remap ever: asbjornHaland
--- Advanced yanking (currently disabled)
--- vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
--- vim.keymap.set("n", "<leader>Y", [["+Y]])
+-- Advanced yanking
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
+vim.keymap.set("n", "<leader>Y", [["+Y]])
 
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete (preserve register)" })
 vim.keymap.set("n", "Q", "<nop>")

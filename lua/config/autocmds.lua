@@ -14,6 +14,15 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+-- Set shiftwidth per filetype
+vim.api.nvim_create_autocmd("FileType", {
+  group = augroup("filetype_settings"),
+  pattern = { "cpp" },
+  callback = function()
+    vim.opt_local.shiftwidth = 4
+  end,
+})
+
 -- close more filetypes with <q>
 vim.api.nvim_create_autocmd("FileType", {
   group = augroup("close_with_q"),
