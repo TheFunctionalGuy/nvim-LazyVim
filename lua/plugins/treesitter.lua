@@ -1,8 +1,8 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  opts = {
-    auto_install = true,
-    ensure_installed = {
+  opts = function(_, opts)
+    opts.auto_install = true
+    vim.list_extend(opts.ensure_installed, {
       "comment",
       "cpp",
       "diff",
@@ -11,6 +11,6 @@ return {
       "gitattributes",
       "gitcommit",
       "rust",
-    },
-  },
+    })
+  end,
 }
