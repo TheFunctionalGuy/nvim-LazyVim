@@ -14,6 +14,10 @@ vim.keymap.set("c", "<C-k>", "<C-p>")
 -- Better undo
 vim.keymap.set("n", "U", "<C-r>")
 
+-- Force format
+vim.keymap.set("n", "<leader>cF", vim.lsp.buf.format, { desc = "Force format document" })
+vim.keymap.set("v", "<leader>cF", vim.lsp.buf.format, { desc = "Force format range" })
+
 -- Append semi-colon at end of line in insert mode
 vim.keymap.set("i", "<C-l>", "<C-o>mz<C-o>A;<C-o>`z")
 
