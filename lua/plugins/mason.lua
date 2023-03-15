@@ -1,5 +1,6 @@
 return {
   "williamboman/mason.nvim",
+  -- Overwrite existing config
   opts = {
     ensure_installed = {
       -- Lua
