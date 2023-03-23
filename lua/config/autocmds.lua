@@ -5,16 +5,26 @@ local function augroup(name)
   return vim.api.nvim_create_augroup("m1ll1_" .. name, { clear = true })
 end
 
--- Disable autoformat for cpp files
-vim.api.nvim_create_autocmd("FileType", {
-  group = augroup("disable_autoformat"),
-  pattern = { "cpp" },
-  callback = function()
-    vim.b.autoformat = false
-  end,
+local function set_file_type_autocmd(filetype_table)
+  local group = augroup("set_file_type")
+
+  for filetype, pattern in pairs(filetype_table) do
+    vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+      group = group,
+      pattern = pattern,
+      callback = function()
+        vim.cmd("set filetype=" .. filetype)
+      end,
+    })
+  end
+end
+
+set_file_type_autocmd({
+  justfile = { "Justfile" },
+  tablegen = { "*.td" },
 })
 
--- Set shiftwidth per filetype
+-- Set settings per filetype
 vim.api.nvim_create_autocmd("FileType", {
   group = augroup("filetype_settings"),
   pattern = { "cpp" },
@@ -22,6 +32,9 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt_local.shiftwidth = 4
     vim.opt_local.tabstop = 4
     vim.opt_local.softtabstop = 4
+
+    -- Disable autoformat for this buffer
+    vim.b.autoformat = false
   end,
 })
 
