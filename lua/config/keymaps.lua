@@ -18,8 +18,11 @@ vim.keymap.set("n", "U", "<C-r>")
 vim.keymap.set("n", "<leader>cF", vim.lsp.buf.format, { desc = "Force format document" })
 vim.keymap.set("v", "<leader>cF", vim.lsp.buf.format, { desc = "Force format range" })
 
--- Append semi-colon at end of line in insert mode
-vim.keymap.set("i", "<C-l>", "<C-o>mz<C-o>A;<C-o>`z")
+-- Append semi-colon at end of line in insert and normal mode
+vim.keymap.set("i", "<C-f>", "<C-o>mz<C-o>A;<C-o>`z")
+vim.keymap.set("n", "<C-f>", "mzA;<Esc>`z")
+-- Also unbind the other leftover scroll keymap
+vim.keymap.set("n", "<C-b>", "<nop>")
 
 -- Keymaps from ThePrimeagen
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Join line with below" })
