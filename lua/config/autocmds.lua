@@ -20,13 +20,13 @@ local function set_file_type_autocmd(filetype_table)
 end
 
 set_file_type_autocmd({
-  justfile = { "Justfile" },
   tablegen = { "*.td" },
 })
 
 -- Set settings per filetype
+local filetype_settings_group = augroup("filetype_settings")
 vim.api.nvim_create_autocmd("FileType", {
-  group = augroup("filetype_settings"),
+  group = filetype_settings_group,
   pattern = { "cpp" },
   callback = function()
     vim.opt_local.shiftwidth = 4
@@ -35,6 +35,16 @@ vim.api.nvim_create_autocmd("FileType", {
 
     -- Disable autoformat for this buffer
     vim.b.autoformat = false
+  end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  group = filetype_settings_group,
+  pattern = { "just" },
+  callback = function()
+    vim.opt_local.shiftwidth = 4
+    vim.opt_local.tabstop = 4
+    vim.opt_local.softtabstop = 4
   end,
 })
 
