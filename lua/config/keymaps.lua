@@ -11,8 +11,8 @@ vim.keymap.set("n", "<leader>L", "<cmd>:Lazy<cr>", { desc = "Lazy" })
 vim.keymap.set("c", "<C-j>", "<C-n>")
 vim.keymap.set("c", "<C-k>", "<C-p>")
 
--- Better undo
-vim.keymap.set("n", "U", "<C-r>")
+-- Better redo
+vim.keymap.set("n", "U", "<C-r>", { desc = "Redo" })
 
 -- Force format
 vim.keymap.set("n", "<leader>cF", vim.lsp.buf.format, { desc = "Force format document" })
@@ -20,9 +20,13 @@ vim.keymap.set("v", "<leader>cF", vim.lsp.buf.format, { desc = "Force format ran
 
 -- Append semi-colon at end of line in insert and normal mode
 vim.keymap.set("i", "<C-f>", "<C-o>mz<C-o>A;<C-o>`z")
-vim.keymap.set("n", "<C-f>", "mzA;<Esc>`z")
+vim.keymap.set("n", "<C-f>", "mzA;<Esc>`z", { desc = "Append semi-colon to line" })
 -- Also unbind the other leftover scroll keymap
 vim.keymap.set("n", "<C-b>", "<nop>")
+
+-- Get left and right git-diff
+vim.keymap.set("n", "gmh", "<cmd>diffget //2<CR>", { desc = "Get left git-diff" })
+vim.keymap.set("n", "gml", "<cmd>diffget //3<CR>", { desc = "Get right git-diff" })
 
 -- Keymaps from ThePrimeagen
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Join line with below" })
