@@ -13,6 +13,7 @@ return {
   -- Extend existing config
   opts = function(_, opts)
     opts.auto_install = true
+    opts.ignore_install = { "help" }
     vim.list_extend(opts.ensure_installed, {
       "comment",
       "cpp",

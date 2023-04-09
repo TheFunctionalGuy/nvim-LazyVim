@@ -1,6 +1,6 @@
 return {
   "nvim-telescope/telescope.nvim",
-  -- Extend existing config
+  -- Overwrite existing config
   opts = {
     defaults = {
       mappings = {

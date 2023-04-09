@@ -5,6 +5,9 @@ local function augroup(name)
   return vim.api.nvim_create_augroup("m1ll1_" .. name, { clear = true })
 end
 
+-- #############################
+-- # Set filetypes per pattern #
+-- #############################
 local function set_file_type_autocmd(filetype_table)
   local group = augroup("set_file_type")
 
@@ -23,7 +26,9 @@ set_file_type_autocmd({
   tablegen = { "*.td" },
 })
 
--- Set settings per filetype
+-- #############################
+-- # Set settings per filetype #
+-- #############################
 local filetype_settings_group = augroup("filetype_settings")
 vim.api.nvim_create_autocmd("FileType", {
   group = filetype_settings_group,
@@ -48,7 +53,18 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- close more filetypes with <q>
+vim.api.nvim_create_autocmd("FileType", {
+  group = filetype_settings_group,
+  pattern = { "lazy" },
+  callback = function()
+    -- Disable better diagnostic annotation for lazy.nvim
+    vim.diagnostic.config({
+      virtual_lines = false,
+    })
+  end,
+})
+
+-- Close more filetypes with <q>
 vim.api.nvim_create_autocmd("FileType", {
   group = augroup("close_with_q"),
   pattern = {
