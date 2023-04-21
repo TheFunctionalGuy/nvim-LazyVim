@@ -91,3 +91,22 @@ vim.api.nvim_create_autocmd("VimEnter", {
     end
   end,
 })
+
+-- Clear snippet when leaving insert mode
+local luasnip = require("luasnip")
+
+vim.api.nvim_create_autocmd("ModeChanged", {
+  group = augroup("unlink_snippet"),
+  pattern = { "s:n", "i:*" },
+  desc = "Forget the current snippet when leaving the insert mode",
+  callback = function(evt)
+    -- If there is more than one node then all of them need to get removed
+    while true do
+      if luasnip.session and luasnip.session.current_nodes[evt.buf] and not luasnip.session.jump_active then
+        luasnip.unlink_current()
+      else
+        break
+      end
+    end
+  end,
+})
