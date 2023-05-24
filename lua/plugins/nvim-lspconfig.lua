@@ -26,5 +26,6 @@ return {
   -- Extend existing config
   opts = function(_, opts)
     opts.diagnostics.virtual_text = false
+    opts.diagnostics.virtual_lines = true
   end,
 }
