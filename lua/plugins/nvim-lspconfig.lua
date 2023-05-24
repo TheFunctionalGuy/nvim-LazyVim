@@ -3,9 +3,22 @@ return {
   dependencies = {
     {
       "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-      -- stylua: ignore
       keys = {
-        { "<leader>uD", function() require("lsp_lines").toggle() end, desc = "Toggle lsp_lines" },
+        {
+          "<leader>uD",
+          function()
+            local Util = require("lazy.core.util")
+            local new_value = not vim.diagnostic.config().virtual_lines
+            require("lsp_lines").toggle()
+
+            if new_value then
+              Util.info("Enabled virtual line diagnostics", { title = "Option" })
+            else
+              Util.info("Disabled virtual line diagnostics", { title = "Option" })
+            end
+          end,
+          desc = "Toggle virtual line diagnostics",
+        },
       },
       config = true,
     },
