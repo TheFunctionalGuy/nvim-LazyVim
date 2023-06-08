@@ -1,6 +1,7 @@
 -- Autocmds are automatically loaded on the VeryLazy event
 -- Default autocmds that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/autocmds.lua
 -- Add any additional autocmds here
+local autocmd = vim.api.nvim_create_autocmd
 local function augroup(name)
   return vim.api.nvim_create_augroup("m1ll1_" .. name, { clear = true })
 end
@@ -12,7 +13,7 @@ local function set_file_type_autocmd(filetype_table)
   local group = augroup("set_file_type")
 
   for filetype, pattern in pairs(filetype_table) do
-    vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+    autocmd({ "BufRead", "BufNewFile" }, {
       group = group,
       pattern = pattern,
       callback = function()
@@ -30,7 +31,7 @@ set_file_type_autocmd({
 -- # Set settings per filetype #
 -- #############################
 local filetype_settings_group = augroup("filetype_settings")
-vim.api.nvim_create_autocmd("FileType", {
+autocmd("FileType", {
   group = filetype_settings_group,
   pattern = { "cpp" },
   callback = function()
@@ -43,7 +44,7 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-vim.api.nvim_create_autocmd("FileType", {
+autocmd("FileType", {
   group = filetype_settings_group,
   pattern = { "just" },
   callback = function()
@@ -53,7 +54,7 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-vim.api.nvim_create_autocmd("FileType", {
+autocmd("FileType", {
   group = filetype_settings_group,
   pattern = { "lazy" },
   callback = function()
@@ -64,8 +65,18 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+autocmd("FileType", {
+  group = filetype_settings_group,
+  pattern = { "fish" },
+  callback = function()
+    vim.opt_local.shiftwidth = 4
+    vim.opt_local.tabstop = 4
+    vim.opt_local.softtabstop = 4
+  end,
+})
+
 -- Close more filetypes with <q>
-vim.api.nvim_create_autocmd("FileType", {
+autocmd("FileType", {
   group = augroup("close_with_q"),
   pattern = {
     "fugitive",
@@ -77,7 +88,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -- Set CWD if first parameter is directory
-vim.api.nvim_create_autocmd("VimEnter", {
+autocmd("VimEnter", {
   group = augroup("change_cwd"),
   callback = function()
     if vim.fn.argc() == 1 then
@@ -95,7 +106,7 @@ vim.api.nvim_create_autocmd("VimEnter", {
 -- Clear snippet when leaving insert mode
 local luasnip = require("luasnip")
 
-vim.api.nvim_create_autocmd("ModeChanged", {
+autocmd("ModeChanged", {
   group = augroup("unlink_snippet"),
   pattern = { "s:n", "i:*" },
   desc = "Forget the current snippet when leaving the insert mode",
@@ -108,5 +119,15 @@ vim.api.nvim_create_autocmd("ModeChanged", {
         break
       end
     end
+  end,
+})
+
+-- Disable auto comment when pressing o/O
+autocmd("Filetype", {
+  group = augroup("disable_auto_comment"),
+  pattern = { "*" },
+  desc = "Don't continue comments with o and O",
+  callback = function()
+    vim.opt.formatoptions = vim.opt.formatoptions - "o"
   end,
 })
