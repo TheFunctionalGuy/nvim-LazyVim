@@ -10,8 +10,9 @@ return {
       },
     },
   },
+  { "echasnovski/mini.align", config = true },
   {
     "echasnovski/mini.pairs",
-    cond = false,
+    enabled = false,
   },
 }
