@@ -6,10 +6,10 @@ vim.g.loaded_ruby_provider = 0
 vim.g.loaded_node_provider = 0
 vim.g.loaded_perl_provider = 0
 
--- TODO: Set per filetype via autocmd
--- vim.opt.tabstop = 4
--- vim.opt.softtabstop = 4
--- vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 0
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
 
 vim.opt.scrolloff = 8
 

@@ -35,22 +35,8 @@ autocmd("FileType", {
   group = filetype_settings_group,
   pattern = { "cpp" },
   callback = function()
-    vim.opt_local.shiftwidth = 4
-    vim.opt_local.tabstop = 4
-    vim.opt_local.softtabstop = 4
-
     -- Disable autoformat for this buffer
     vim.b.autoformat = false
-  end,
-})
-
-autocmd("FileType", {
-  group = filetype_settings_group,
-  pattern = { "just" },
-  callback = function()
-    vim.opt_local.shiftwidth = 4
-    vim.opt_local.tabstop = 4
-    vim.opt_local.softtabstop = 4
   end,
 })
 
@@ -67,11 +53,10 @@ autocmd("FileType", {
 
 autocmd("FileType", {
   group = filetype_settings_group,
-  pattern = { "fish" },
+  pattern = { "lua" },
   callback = function()
-    vim.opt_local.shiftwidth = 4
-    vim.opt_local.tabstop = 4
-    vim.opt_local.softtabstop = 4
+    vim.opt_local.shiftwidth = 2
+    vim.opt_local.tabstop = 2
   end,
 })
 
