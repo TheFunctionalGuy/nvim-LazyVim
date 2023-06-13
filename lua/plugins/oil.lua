@@ -1,5 +1,6 @@
 return {
   "stevearc/oil.nvim",
+  enabled = false,
   -- stylua: ignore
   keys = {
     { "-", function() require("oil").open() end, desc = "Open parent directory" },
