@@ -27,19 +27,6 @@ set_file_type_autocmd({
   tablegen = { "*.td" },
 })
 
--- #############################
--- # Set settings per filetype #
--- #############################
-local filetype_settings_group = augroup("filetype_settings")
-autocmd("FileType", {
-  group = filetype_settings_group,
-  pattern = { "cpp" },
-  callback = function()
-    -- Disable autoformat for this buffer
-    vim.b.autoformat = false
-  end,
-})
-
 autocmd("FileType", {
   group = filetype_settings_group,
   pattern = { "lazy" },

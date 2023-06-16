@@ -6,7 +6,7 @@ return {
       local function maximize_status()
         return vim.t.maximized and "   " or ""
       end
-      table.insert(opts.sections.lualine_c, maximize_status)
+      table.insert(opts.sections.lualine_c, 1, maximize_status)
     end,
   },
   -- stylua: ignore
