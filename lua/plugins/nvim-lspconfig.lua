@@ -27,5 +27,9 @@ return {
   opts = function(_, opts)
     opts.diagnostics.virtual_text = false
     opts.diagnostics.virtual_lines = true
+
+    opts.setup.clangd = function(_, opts_clangd)
+      opts_clangd.cmd = { "clangd", "--header-insertion=never" }
+    end
   end,
 }
