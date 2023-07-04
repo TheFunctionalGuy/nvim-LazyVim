@@ -8,7 +8,6 @@ return {
       "stylua",
       -- Rust
       "rust-analyzer",
-      "rustfmt",
       -- C++
       "clangd",
       "clang-format",
