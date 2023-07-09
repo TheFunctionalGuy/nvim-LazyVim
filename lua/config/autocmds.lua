@@ -27,6 +27,10 @@ set_file_type_autocmd({
   tablegen = { "*.td" },
 })
 
+-- #############################
+-- # Set settings per filetype #
+-- #############################
+local filetype_settings_group = augroup("filetype_settings")
 autocmd("FileType", {
   group = filetype_settings_group,
   pattern = { "lazy" },
@@ -44,6 +48,14 @@ autocmd("FileType", {
   callback = function()
     vim.opt_local.shiftwidth = 2
     vim.opt_local.tabstop = 2
+  end,
+})
+
+autocmd("FileType", {
+  group = filetype_settings_group,
+  pattern = { "plaintex", "tex" },
+  callback = function()
+    vim.opt_local.wrap = true
   end,
 })
 
