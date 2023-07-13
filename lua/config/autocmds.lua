@@ -71,22 +71,6 @@ autocmd("FileType", {
   end,
 })
 
--- Set CWD if first parameter is directory
-autocmd("VimEnter", {
-  group = augroup("change_cwd"),
-  callback = function()
-    if vim.fn.argc() == 1 then
-      local stat = vim.loop.fs_stat(vim.fn.argv(0))
-      if stat and stat.type == "directory" then
-        vim.cmd({
-          cmd = "cd",
-          args = { vim.fn.argv(0) },
-        })
-      end
-    end
-  end,
-})
-
 -- Clear snippet when leaving insert mode
 local luasnip = require("luasnip")
 
