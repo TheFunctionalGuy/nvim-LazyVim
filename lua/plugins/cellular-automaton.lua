@@ -8,7 +8,7 @@ return {
   },
   {
     "folke/which-key.nvim",
-    opts = function()
+    opts = function(_, _)
       require("which-key").register({
         ["<leader>F"] = { name = "+CellularAutomaton" },
         ["<leader>FM"] = { name = "+CellularAutomaton" },

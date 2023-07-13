@@ -1,7 +1,6 @@
 return {
   {
     "echasnovski/mini.comment",
-    -- Overwrite existing config
     opts = {
       mappings = {
         comment = "<leader>cc",

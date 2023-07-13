@@ -7,7 +7,6 @@ return {
       require("telescope").load_extension("fzf")
     end,
   },
-  -- Overwrite existing config
   opts = {
     defaults = {
       mappings = {

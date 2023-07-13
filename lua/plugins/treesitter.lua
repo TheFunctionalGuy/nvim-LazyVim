@@ -10,7 +10,6 @@ return {
       config = true,
     },
   },
-  -- Extend existing config
   opts = function(_, opts)
     opts.auto_install = true
     opts.ignore_install = { "help" }
