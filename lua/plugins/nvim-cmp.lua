@@ -1,3 +1,4 @@
+-- TODO: Check whether this is still relevant
 return {
   "hrsh7th/nvim-cmp",
   dependencies = { "onsails/lspkind.nvim" },
@@ -9,6 +10,7 @@ return {
       ["<C-j>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
       ["<C-k>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
     })
+
     opts.formatting = {
       format = lspkind.cmp_format({
         mode = "symbol_text",

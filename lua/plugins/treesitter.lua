@@ -13,16 +13,15 @@ return {
   opts = function(_, opts)
     opts.auto_install = true
     opts.ignore_install = { "help" }
+
     vim.list_extend(opts.ensure_installed, {
       "comment",
-      "cpp",
       "diff",
       "git_config",
       "git_rebase",
       "gitattributes",
       "gitcommit",
       "jsonc",
-      "rust",
     })
   end,
 }
