@@ -1,4 +1,3 @@
--- TODO: Check whether this is still relevant
 return {
   "hrsh7th/nvim-cmp",
   dependencies = { "onsails/lspkind.nvim" },

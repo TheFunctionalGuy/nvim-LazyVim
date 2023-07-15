@@ -17,3 +17,5 @@ vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
 vim.opt.isfname:append("@-@")
+
+vim.opt.pumblend = 0
