@@ -44,7 +44,7 @@ autocmd("FileType", {
 
 autocmd("FileType", {
   group = filetype_settings_group,
-  pattern = { "lua" },
+  pattern = { "json", "jsonc", "lua" },
   callback = function()
     vim.opt_local.shiftwidth = 2
     vim.opt_local.tabstop = 2
