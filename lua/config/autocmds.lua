@@ -16,6 +16,7 @@ local function set_file_type_autocmd(filetype_table)
     autocmd({ "BufRead", "BufNewFile" }, {
       group = group,
       pattern = pattern,
+      desc = "Set file type per pattern",
       callback = function()
         vim.cmd("set filetype=" .. filetype)
       end,
@@ -31,29 +32,33 @@ set_file_type_autocmd({
 -- # Set settings per filetype #
 -- #############################
 local filetype_settings_group = augroup("filetype_settings")
-autocmd("FileType", {
-  group = filetype_settings_group,
-  pattern = { "lazy" },
-  callback = function()
-    -- Disable better diagnostic annotation for lazy.nvim
-    vim.diagnostic.config({
-      virtual_lines = false,
-    })
-  end,
-})
+-- autocmd("WinEnter", {
+--   group = filetype_settings_group,
+--   pattern = { "lazy" },
+--   callback = function()
+--     -- Disable better diagnostic annotation for lazy.nvim
+--     vim.diagnostic.show(nil, 0, nil, {
+--       virtual_text = true,
+--       virtual_lines = false,
+--     })
+--   end,
+-- })
 
+-- Tabstop settings
 autocmd("FileType", {
   group = filetype_settings_group,
   pattern = { "json", "jsonc", "lua" },
+  desc = "Set tabstop size = 2 for certain file types",
   callback = function()
-    vim.opt_local.shiftwidth = 2
     vim.opt_local.tabstop = 2
   end,
 })
 
+-- Wrapping
 autocmd("FileType", {
   group = filetype_settings_group,
   pattern = { "plaintex", "tex" },
+  desc = "Enable wrapping for certain file types",
   callback = function()
     vim.opt_local.wrap = true
   end,
@@ -65,6 +70,7 @@ autocmd("FileType", {
   pattern = {
     "fugitive",
   },
+  desc = "Allow certain file types to be closed with <q>",
   callback = function(event)
     vim.bo[event.buf].buflisted = false
     vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = event.buf, silent = true })
@@ -97,5 +103,17 @@ autocmd("Filetype", {
   desc = "Don't continue comments with o and O",
   callback = function()
     vim.opt.formatoptions = vim.opt.formatoptions - "o"
+  end,
+})
+
+-- Disable indent guide on certain additional file types
+autocmd("FileType", {
+  group = augroup("disable_mini_indentscope"),
+  pattern = {
+    "undotree",
+  },
+  desc = "Disable mini.indentscope for certain file types",
+  callback = function()
+    vim.b.miniindentscope_disable = true
   end,
 })
