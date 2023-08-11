@@ -7,6 +7,8 @@ return {
       "stylua",
       -- C++
       "clang-format",
+      -- Python
+      "black",
     })
   end,
 }
