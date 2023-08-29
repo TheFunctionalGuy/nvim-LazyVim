@@ -47,7 +47,7 @@ local filetype_settings_group = augroup("filetype_settings")
 -- Tabstop settings
 autocmd("FileType", {
   group = filetype_settings_group,
-  pattern = { "json", "jsonc", "lua" },
+  pattern = { "json", "jsonc", "lua", "haskell" },
   desc = "Set tabstop size = 2 for certain file types",
   callback = function()
     vim.opt_local.tabstop = 2
