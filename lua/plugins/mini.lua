@@ -22,4 +22,18 @@ return {
     "echasnovski/mini.pairs",
     enabled = false,
   },
+  {
+    "echasnovski/mini.surround",
+    opts = {
+      mappings = {
+        add = "Ma",
+        delete = "Md",
+        find = "Mf",
+        find_left = "MF",
+        highlight = "Mh",
+        replace = "Mr",
+        update_n_lines = "Mn",
+      },
+    },
+  },
 }
