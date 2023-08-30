@@ -13,6 +13,7 @@ vim.keymap.set("c", "<C-k>", "<C-p>")
 
 -- Better redo
 vim.keymap.set("n", "U", "<C-r>", { desc = "Redo" })
+vim.keymap.set("n", "<C-r>", "U", { desc = "Undo line" })
 
 -- Force format
 vim.keymap.set("n", "<leader>cF", vim.lsp.buf.format, { desc = "Force format document" })
@@ -47,6 +48,7 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]], { desc = "Delete (preserve register)" })
 vim.keymap.set("n", "Q", "<nop>")
 
+-- Replace word under cursor in file
 vim.keymap.set(
   "n",
   "<leader>S",
