@@ -9,8 +9,6 @@ return {
       "clang-format",
       -- Python
       "black",
-      -- Zig,
-      "zls",
     })
   end,
 }
