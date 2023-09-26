@@ -15,8 +15,6 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.clangd" },
     -- Rust support
     { import = "lazyvim.plugins.extras.lang.rust" },
-    -- Go support
-    { import = "lazyvim.plugins.extras.lang.go" },
     -- Python support
     { import = "lazyvim.plugins.extras.lang.python" },
     -- LaTeX support

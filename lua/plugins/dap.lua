@@ -16,8 +16,4 @@ return {
     { "<F11>", function() require("dap").set_breakpoint(vim.fn.input "[Condition] > ") end, desc = "Conditional Breakpoint", },
     { "<F12>", function() require("dapui").toggle() end, desc = "Toggle UI", },
   },
-  opts = function(_, _)
-    -- Use launch.json
-    require("dap.ext.vscode").load_launchjs(nil, { codelldb = { "c", "cpp", "rust" } })
-  end,
 }
