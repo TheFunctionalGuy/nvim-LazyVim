@@ -5,7 +5,7 @@
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
 -- Map Lazy to <leader>L due to harpoon occupying <leader>l
-vim.keymap.set("n", "<leader>L", "<cmd>:Lazy<cr>", { desc = "Lazy" })
+vim.keymap.set("n", "<leader>L", "<cmd>Lazy<CR>", { desc = "Lazy" })
 
 -- Easier command mode movement
 vim.keymap.set("c", "<C-j>", "<C-n>")

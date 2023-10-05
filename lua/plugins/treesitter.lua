@@ -9,7 +9,7 @@ return {
       "nvim-treesitter/nvim-treesitter-context",
       -- stylua: ignore
       keys = {
-        { "[c", function() require("treesitter-context").go_to_context() end, desc = "Go to context" },
+        { "[x", function() require("treesitter-context").go_to_context() end, desc = "Go to context" },
       },
       config = true,
     },
