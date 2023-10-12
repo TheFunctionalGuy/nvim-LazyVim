@@ -17,6 +17,7 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.rust" },
     -- Python support
     { import = "lazyvim.plugins.extras.lang.python" },
+    { import = "lazyvim.plugins.extras.formatting.black" },
     -- LaTeX support
     { import = "lazyvim.plugins.extras.lang.tex" },
     -- DAP support
