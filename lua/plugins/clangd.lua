@@ -1,6 +1,7 @@
 return {
   {
     "neovim/nvim-lspconfig",
+    optional = true,
     opts = {
       setup = {
         clangd = function(_, opts_clangd)

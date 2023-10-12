@@ -2,6 +2,7 @@ return {
   { "echasnovski/mini.align", config = true },
   {
     "echasnovski/mini.comment",
+    optional = true,
     opts = {
       mappings = {
         comment = "<leader>cc",
@@ -12,6 +13,7 @@ return {
   },
   {
     "echasnovski/mini.indentscope",
+    optional = true,
     opts = {
       draw = {
         animation = require("mini.indentscope").gen_animation.none(),
@@ -24,6 +26,7 @@ return {
   },
   {
     "echasnovski/mini.surround",
+    optional = true,
     opts = {
       custom_surroundings = {
         -- Latex commands: \command{%s}

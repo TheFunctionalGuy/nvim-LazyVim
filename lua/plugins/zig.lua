@@ -1,12 +1,11 @@
 return {
-  {
-    "neovim/nvim-lspconfig",
-    opts = {
-      servers = {
-        zls = {
-          -- Use local install instead of mason
-          mason = false,
-        },
+  "neovim/nvim-lspconfig",
+  optional = true,
+  opts = {
+    servers = {
+      zls = {
+        -- Use local install instead of mason
+        mason = false,
       },
     },
   },

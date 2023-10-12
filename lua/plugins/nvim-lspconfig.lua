@@ -1,5 +1,6 @@
 return {
   "neovim/nvim-lspconfig",
+  optional = true,
   dependencies = {
     {
       "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
