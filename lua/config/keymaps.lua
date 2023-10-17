@@ -15,10 +15,6 @@ vim.keymap.set("c", "<C-k>", "<C-p>")
 vim.keymap.set("n", "U", "<C-r>", { desc = "Redo" })
 vim.keymap.set("n", "<C-r>", "U", { desc = "Undo line" })
 
--- Force format
-vim.keymap.set("n", "<leader>cF", vim.lsp.buf.format, { desc = "Force format document" })
-vim.keymap.set("v", "<leader>cF", vim.lsp.buf.format, { desc = "Force format range" })
-
 -- Append semi-colon at end of line in insert and normal mode
 vim.keymap.set("i", "<C-f>", "<C-o>mz<C-o>A;<C-o>`z")
 vim.keymap.set("n", "<C-f>", "mzA;<Esc>`z", { desc = "Append semi-colon to line" })
