@@ -7,6 +7,7 @@ return {
       mappings = {
         comment = "<leader>cc",
         comment_line = "<leader>ccl",
+        comment_visual = "<leader>cc",
         textobject = "<leader>cc",
       },
     },
