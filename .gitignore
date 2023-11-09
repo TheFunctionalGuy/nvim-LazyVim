@@ -8,4 +8,5 @@ foo.*
 data
 
 # Config files that represent local settings
-lua/plugins/neorg-dirman.lua
+/lazyvim.json
+/lazy-lock.json

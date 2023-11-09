@@ -21,10 +21,6 @@ vim.keymap.set("n", "<C-f>", "mzA;<Esc>`z", { desc = "Append semi-colon to line"
 -- Also unbind the other leftover scroll keymap
 vim.keymap.set("n", "<C-b>", "<nop>")
 
--- Get left and right git-diff
-vim.keymap.set("n", "gmh", "<cmd>diffget //2<CR>", { desc = "Get left git-diff" })
-vim.keymap.set("n", "gml", "<cmd>diffget //3<CR>", { desc = "Get right git-diff" })
-
 -- Keymaps from ThePrimeagen
 vim.keymap.set("n", "J", "mzJ`z", { desc = "Join line with below" })
 -- Misc movements while keeping cursor in center

@@ -10,18 +10,6 @@ require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-    -- import any extras modules here
-    -- C/C++ support
-    { import = "lazyvim.plugins.extras.lang.clangd" },
-    -- Rust support
-    { import = "lazyvim.plugins.extras.lang.rust" },
-    -- Python support
-    { import = "lazyvim.plugins.extras.lang.python" },
-    { import = "lazyvim.plugins.extras.formatting.black" },
-    -- LaTeX support
-    { import = "lazyvim.plugins.extras.lang.tex" },
-    -- DAP support
-    { import = "lazyvim.plugins.extras.dap.core" },
     -- import/override with your plugins
     { import = "plugins" },
   },
