@@ -3,10 +3,6 @@ return {
   optional = true,
   dependencies = {
     {
-      "IndianBoy42/tree-sitter-just",
-      config = true,
-    },
-    {
       "nvim-treesitter/nvim-treesitter-context",
       -- stylua: ignore
       keys = {
