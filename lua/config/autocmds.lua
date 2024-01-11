@@ -44,7 +44,7 @@ local filetype_settings_group = augroup("filetype_settings")
 --   end,
 -- })
 
--- Disable TreeSitter context for Zig files
+-- TODO: Disable TreeSitter context for Zig files until performance issues are fixed
 autocmd("BufEnter", {
   group = filetype_settings_group,
   pattern = { "*" },
@@ -75,6 +75,7 @@ autocmd("FileType", {
   desc = "Enable wrapping for certain file types",
   callback = function()
     vim.opt_local.wrap = true
+    vim.opt_local.spell = true
   end,
 })
 
