@@ -10,6 +10,7 @@ return {
         pylsp = {
           plugins = {
             pycodestyle = {
+              ignore = { "E203" },
               maxLineLength = 100,
             },
           },
