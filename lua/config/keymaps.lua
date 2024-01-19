@@ -26,8 +26,10 @@ vim.keymap.set("n", "J", "mzJ`z", { desc = "Join line with below" })
 -- Misc movements while keeping cursor in center
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Jump down" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Jump up" })
-vim.keymap.set("n", "n", "nzzzv", { desc = "Next search result" })
-vim.keymap.set("n", "N", "Nzzzv", { desc = "Prev search result" })
+vim.keymap.set("n", "n", "'Nn'[v:searchforward].'zzzv'", { expr = true, desc = "Next search result" })
+vim.keymap.set("n", "N", "'nN'[v:searchforward].'zzzv'", { expr = true, desc = "Prev search result" })
+vim.keymap.set("x", "n", "'Nn'[v:searchforward].'zz'", { expr = true, desc = "Next search result" })
+vim.keymap.set("x", "N", "'nN'[v:searchforward].'zz'", { expr = true, desc = "Prev search result" })
 
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste (preserve register)" })
