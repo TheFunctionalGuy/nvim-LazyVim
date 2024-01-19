@@ -8,8 +8,8 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 vim.keymap.set("n", "<leader>L", "<cmd>Lazy<CR>", { desc = "Lazy" })
 
 -- Easier command mode movement
-vim.keymap.set("c", "<C-j>", "<C-n>")
-vim.keymap.set("c", "<C-k>", "<C-p>")
+vim.api.nvim_set_keymap("c", "<C-j>", 'wildmenumode() ? "<C-n>" : "<Down>"', { expr = true, noremap = true })
+vim.api.nvim_set_keymap("c", "<C-k>", 'wildmenumode() ? "<C-p>" : "<Up>"', { expr = true, noremap = true })
 
 -- Better redo
 vim.keymap.set("n", "U", "<C-r>", { desc = "Redo" })
