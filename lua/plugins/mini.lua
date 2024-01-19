@@ -54,12 +54,12 @@ return {
         },
         -- Latex bold text: \textbf{%s}
         ["B"] = {
-          input = { "\\textbf{%w*}", "^\\textbf{().-()}$" },
+          input = { "\\textbf%b{}", "^\\textbf{().-()}$" },
           output = { left = "\\textbf{", right = "}" },
         },
         -- Latex italic text: \textit{%s}
         ["I"] = {
-          input = { "\\textit{%w*}", "^\\textit{().-()}$" },
+          input = { "\\textit%b{}", "^\\textit{().-()}$" },
           output = { left = "\\textit{", right = "}" },
         },
       },
