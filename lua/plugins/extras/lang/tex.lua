@@ -13,6 +13,11 @@ return {
               forwardSearchAfter = true,
               onSave = true,
             },
+            diagnostics = {
+              ignoredPatterns = {
+                "Undefined reference",
+              },
+            },
             -- Enable forward-search
             forwardSearch = {
               executable = "zathura",
@@ -24,25 +29,6 @@ return {
             },
           },
         },
-      },
-    },
-  },
-  -- Ensure TeX formatter is installed
-  {
-    "williamboman/mason.nvim",
-    optional = true,
-    opts = function(_, opts)
-      if type(opts.ensure_installed) == "table" then
-        vim.list_extend(opts.ensure_installed, { "latexindent" })
-      end
-    end,
-  },
-  {
-    "stevearc/conform.nvim",
-    optional = true,
-    opts = {
-      formatters_by_ft = {
-        tex = { "latexindent" },
       },
     },
   },
