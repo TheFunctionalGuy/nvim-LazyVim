@@ -84,6 +84,11 @@ return {
           input = { "\\textit%b{}", "^\\textit{().-()}$" },
           output = { left = "\\textit{", right = "}" },
         },
+        -- Latex teletype text: \texttt{%s}
+        ["T"] = {
+          input = { "\\texttt%b{}", "^\\texttt{().-()}$" },
+          output = { left = "\\texttt{", right = "}" },
+        },
       },
     },
   },
