@@ -44,20 +44,6 @@ local filetype_settings_group = augroup("filetype_settings")
 --   end,
 -- })
 
--- TODO: Disable TreeSitter context for Zig files until performance issues are fixed
-autocmd("BufEnter", {
-  group = filetype_settings_group,
-  pattern = { "*" },
-  desc = "Disable TreeSitter context for Zig files",
-  callback = function()
-    if vim.bo.filetype ~= "zig" then
-      require("treesitter-context").enable()
-    else
-      require("treesitter-context").disable()
-    end
-  end,
-})
-
 -- Tabstop settings
 autocmd("FileType", {
   group = filetype_settings_group,
