@@ -19,5 +19,9 @@ return {
       ["<Esc>"] = actions.close,
       ["<C-c>"] = stopinsert,
     })
+
+    -- Custom visuals
+    opts.defaults.path_display = { "smart", "filename_first" }
+    opts.defaults.layout_strategy = "vertical"
   end,
 }
