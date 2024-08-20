@@ -3,7 +3,7 @@ return {
   optional = true,
   opts = {
     servers = {
-      rust_analyzer = {
+      taplo = {
         -- Use local install instead of mason
         mason = false,
       },
