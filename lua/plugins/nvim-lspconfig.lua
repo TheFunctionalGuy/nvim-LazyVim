@@ -30,6 +30,18 @@ return {
       config = true,
     },
   },
+  -- Custom LSP keymaps
+  init = function()
+    local keys = require("lazyvim.plugins.lsp.keymaps").get()
+    -- Disable old keymap overlapping with comment
+    keys[#keys + 1] = { "<leader>cc", mode = { "n", "v" }, false }
+    keys[#keys + 1] = { "<leader>cC", mode = { "n" }, false }
+    -- Move to <leader>cl instead overwritting LSP info keymap
+    keys[#keys + 1] =
+      { "<leader>cl", vim.lsp.codelens.run, desc = "Run Codelens", mode = { "n", "v" }, has = "codeLens" }
+    keys[#keys + 1] =
+      { "<leader>cL", vim.lsp.codelens.refresh, desc = "Refresh & Display Codelens", mode = { "n" }, has = "codeLens" }
+  end,
   opts = {
     diagnostics = {
       virtual_text = false,
