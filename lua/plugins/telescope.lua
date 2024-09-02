@@ -1,6 +1,10 @@
 return {
   "nvim-telescope/telescope.nvim",
   optional = true,
+  keys = {
+    { "<leader>/", LazyVim.pick("live_grep", { root = false }), desc = "Grep (cwd)" },
+    { "<leader><space>", LazyVim.pick("files", { root = false }), desc = "Find Files (cwd)" },
+  },
   opts = function(_, opts)
     local actions = require("telescope.actions")
 
