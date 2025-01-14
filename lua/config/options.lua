@@ -20,3 +20,5 @@ vim.opt.undofile = true
 vim.opt.isfname:append("@-@")
 
 vim.opt.pumblend = 0
+
+vim.g.snacks_animate = false
