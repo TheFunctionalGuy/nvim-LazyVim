@@ -17,8 +17,10 @@ vim.opt.scrolloff = 8
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
+-- Allow @ in file names for commands like "gf"
 vim.opt.isfname:append("@-@")
 
+-- Disable pseudo-transparency
 vim.opt.pumblend = 0
 
 vim.g.snacks_animate = false
