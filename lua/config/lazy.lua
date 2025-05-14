@@ -18,6 +18,11 @@ require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
+    -- NOTE: Enable (extra) plugins that are considered essential
+    { import = "lazyvim.plugins.extras.coding.mini-comment" },
+    { import = "lazyvim.plugins.extras.coding.mini-surround" },
+    { import = "lazyvim.plugins.extras.ui.mini-indentscope" },
+    { import = "lazyvim.plugins.extras.editor.snacks_picker" },
     -- import/override with your plugins
     { import = "plugins" },
   },
