@@ -6,14 +6,4 @@ return {
       { "<leader>FMl", "<cmd>CellularAutomaton game_of_life<CR>", desc = "Game of life" },
     },
   },
-  {
-    "folke/which-key.nvim",
-    optional = true,
-    opts = function(_, _)
-      require("which-key").register({
-        ["<leader>F"] = { name = "+CellularAutomaton" },
-        ["<leader>FM"] = { name = "+CellularAutomaton" },
-      })
-    end,
-  },
 }
