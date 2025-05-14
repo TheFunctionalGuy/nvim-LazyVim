@@ -30,6 +30,8 @@ vim.keymap.set("n", "n", "'Nn'[v:searchforward].'zzzv'", { expr = true, desc = "
 vim.keymap.set("n", "N", "'nN'[v:searchforward].'zzzv'", { expr = true, desc = "Prev search result" })
 vim.keymap.set("x", "n", "'Nn'[v:searchforward].'zz'", { expr = true, desc = "Next search result" })
 vim.keymap.set("x", "N", "'nN'[v:searchforward].'zz'", { expr = true, desc = "Prev search result" })
+vim.keymap.set("n", "]q", "<cmd>cnext<CR>zz", { desc = "Next quickfix item" })
+vim.keymap.set("n", "[q", "<cmd>cprev<CR>zz", { desc = "Prev quickfix item" })
 
 -- greatest remap ever
 vim.keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste (preserve register)" })
