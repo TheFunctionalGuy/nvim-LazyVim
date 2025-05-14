@@ -1,4 +1,5 @@
 return {
+  { import = "lazyvim.plugins.extras.lang.rust" },
   {
     "neovim/nvim-lspconfig",
     optional = true,
