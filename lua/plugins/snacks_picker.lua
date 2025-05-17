@@ -3,8 +3,25 @@ return {
   opts = {
     picker = {
       layout = {
-        -- TODO: Look for better layout or create own
-        preset = "ivy_split",
+        preset = "better_vertical",
+      },
+      layouts = {
+        ["better_vertical"] = {
+          layout = {
+            backdrop = true,
+            width = 0.8,
+            min_width = 80,
+            height = 0.85,
+            min_height = 30,
+            box = "vertical",
+            border = "single",
+            title = "{title} {live} {flags}",
+            title_pos = "center",
+            { win = "input", height = 1, border = "bottom" },
+            { win = "list", border = "none" },
+            { win = "preview", title = "{preview}", height = 0.6, border = "top" },
+          },
+        },
       },
       win = {
         input = {
