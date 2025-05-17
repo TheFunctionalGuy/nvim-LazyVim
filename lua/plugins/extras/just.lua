@@ -4,7 +4,7 @@ return {
   dependencies = {
     {
       "IndianBoy42/tree-sitter-just",
-      config = true,
+      opts = {},
     },
   },
 }
