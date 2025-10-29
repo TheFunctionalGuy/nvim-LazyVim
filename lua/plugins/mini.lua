@@ -1,7 +1,7 @@
 return {
-  { "echasnovski/mini.align", opts = {} },
+  { "nvim-mini/mini.align", opts = {} },
   {
-    "echasnovski/mini.comment",
+    "nvim-mini/mini.comment",
     optional = true,
     opts = {
       mappings = {
@@ -14,7 +14,7 @@ return {
   },
   -- Disable mini.indentscope animation
   {
-    "echasnovski/mini.indentscope",
+    "nvim-mini/mini.indentscope",
     optional = true,
     opts = function(_, opts)
       local mini_indentscope = require("mini.indentscope")
@@ -27,7 +27,7 @@ return {
     end,
   },
   {
-    "echasnovski/mini.surround",
+    "nvim-mini/mini.surround",
     optional = true,
     opts = {
       custom_surroundings = {
